@@ -29,6 +29,7 @@ from sugar3.graphics.icon import Icon
 
 from TurtleArt.tapalette import help_windows
 
+from pathlib import Path
 import os
 import logging
 _logger = logging.getLogger('turtleart-activity')
@@ -62,7 +63,7 @@ class HelpButton(Gtk.ToolItem):
 class TutorialWindows:
     def __init__(self):
         self.array = []
-        self.base_dir = os.getcwd()
+        self.base_dir = Path(__file__).resolve().parents[2]
 
         # Current Index of the Window we are at
         self.curr = 0
